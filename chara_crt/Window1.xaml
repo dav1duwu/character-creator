@@ -1,0 +1,32 @@
+﻿<Window x:Class="chara_crt.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chara_crt"
+        mc:Ignorable="d"
+        Title="Window1" Height="500" Width="800">
+    <Grid>
+        <Label x:Name="lol" Content="Create a Character" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="45" FontWeight="Bold"/>
+        <Label x:Name="lul" Content="Class:" FontSize="45" HorizontalAlignment="Left" Margin="563,109,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lal" Content="Faction:" HorizontalAlignment="Left" Margin="0,215,0,0" VerticalAlignment="Top" FontSize="45" FontWeight="Bold"/>
+
+        <Grid Margin="245,109,246,188">
+            <Border x:Name="border_color" BorderThickness="5" BorderBrush="{StaticResource BorderColor}">
+                <Image Source="imgs/image.png" Width="309" Height="181" Stretch="Uniform" />
+            </Border>
+        </Grid>
+
+        <ComboBox x:Name="cbx_class" HorizontalAlignment="Left" Margin="28,136,0,0" VerticalAlignment="Top" Width="120" Height="67"/>
+
+        <Button x:Name="btn_class_mec" Content="mecista" HorizontalAlignment="Left" Margin="568,201,0,0" VerticalAlignment="Top" Height="60" Width="60" Click="btn_class_mec_Click"/>
+        <Button x:Name="btn_class_luk" Content="lukysta" HorizontalAlignment="Left" Margin="652,201,0,0" VerticalAlignment="Top" Height="60" Width="60" Click="btn_class_luk_Click"/>
+        <Button x:Name="btn_class_hul" Content="mág" HorizontalAlignment="Left" Margin="730,201,0,0" VerticalAlignment="Top" Height="60" Width="60" Click="btn_class_hul_Click"/>
+
+        <TextBox x:Name="txt_input" HorizontalAlignment="Center" Margin="0,293,0,0" TextWrapping="Wrap" Text="xd" VerticalAlignment="Top" Width="308" Height="52" FontSize="25" FontWeight="Bold"/>
+        <Button x:Name="btn_class_horda" Content="horda" HorizontalAlignment="Left" Margin="10,282,0,0" VerticalAlignment="Top" Height="63" Width="80" Click="btn_class_horda_Click"/>
+        <Button x:Name="btn_class_aliance" Content="aliance" HorizontalAlignment="Left" Margin="95,282,0,0" VerticalAlignment="Top" Height="63" Width="80" Click="btn_class_aliance_Click"/>
+
+        <Button x:Name="btn_save" Content="save" HorizontalAlignment="Center" Margin="0,354,0,0" VerticalAlignment="Top" Height="70" Width="780" FontWeight="Bold" FontSize="50" Click="btn_save_Click"/>
+    </Grid>
+</Window>
