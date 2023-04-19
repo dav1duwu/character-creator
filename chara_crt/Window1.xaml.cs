@@ -204,10 +204,6 @@ namespace chara_crt
                     serializer.Serialize(writer, data);
                 }
             }
-            else
-            {
-                MessageBox.Show("error404 something went horribly wrong");
-            }
         }        
     }
 }

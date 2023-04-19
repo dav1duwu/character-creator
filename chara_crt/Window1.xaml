@@ -11,7 +11,7 @@
         <Label x:Name="lul" Content="Class:" FontSize="45" HorizontalAlignment="Left" Margin="563,109,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Comic Sans MS"/>
         <Label x:Name="lal" Content="Faction:" HorizontalAlignment="Left" Margin="0,215,0,0" VerticalAlignment="Top" FontSize="45" FontWeight="Bold" FontFamily="Comic Sans MS"/>
 
-        <Grid Margin="307,59,307,150">
+        <Grid Margin="307,70,307,139">
             <Border x:Name="border_color" BorderThickness="5" BorderBrush="{StaticResource BorderColor}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="Auto" Height="Auto">
                 <Image x:Name="player" Source="imgs/img1.png" Width="181" Height="255" Stretch="Uniform" />
             </Border>
@@ -19,14 +19,14 @@
 
         <ComboBox x:Name="cbx_class" HorizontalAlignment="Left" Margin="28,136,0,0" VerticalAlignment="Top" Width="120" Height="67" SelectionChanged="cbx_class_SelectionChanged"/>
 
-        <Button x:Name="btn_class_mec" Content="mecista" HorizontalAlignment="Left" Margin="568,201,0,0" VerticalAlignment="Top" Height="60" Width="60" Click="btn_class_mec_Click" FontFamily="Comic Sans MS"/>
+        <Button x:Name="btn_class_mec" Content="mečista" HorizontalAlignment="Left" Margin="568,201,0,0" VerticalAlignment="Top" Height="60" Width="60" Click="btn_class_mec_Click" FontFamily="Comic Sans MS"/>
         <Button x:Name="btn_class_luk" Content="lukysta" HorizontalAlignment="Left" Margin="652,201,0,0" VerticalAlignment="Top" Height="60" Width="60" Click="btn_class_luk_Click" FontFamily="Comic Sans MS"/>
         <Button x:Name="btn_class_hul" Content="mág" HorizontalAlignment="Left" Margin="730,201,0,0" VerticalAlignment="Top" Height="60" Width="60" Click="btn_class_hul_Click" FontFamily="Comic Sans MS"/>
 
-        <TextBox x:Name="txt_input" HorizontalAlignment="Center" Margin="0,334,0,0" TextWrapping="Wrap" Text="owo" VerticalAlignment="Top" Width="308" Height="52" FontSize="25" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="txt_input" HorizontalAlignment="Center" Margin="0,345,0,0" TextWrapping="Wrap" Text="owo" VerticalAlignment="Top" Width="308" Height="52" FontSize="25" FontWeight="Bold" FontFamily="Comic Sans MS"/>
         <Button x:Name="btn_class_horda" Content="horda" HorizontalAlignment="Left" Margin="10,282,0,0" VerticalAlignment="Top" Height="63" Width="80" Click="btn_class_horda_Click" FontFamily="Comic Sans MS"/>
         <Button x:Name="btn_class_aliance" Content="aliance" HorizontalAlignment="Left" Margin="95,282,0,0" VerticalAlignment="Top" Height="63" Width="80" Click="btn_class_aliance_Click" FontFamily="Comic Sans MS"/>
 
-        <Button x:Name="btn_save" Content="save" HorizontalAlignment="Center" Margin="0,391,0,0" VerticalAlignment="Top" Height="70" Width="780" FontWeight="Bold" FontSize="50" Click="btn_save_Click" FontFamily="Comic Sans MS"/>
+        <Button x:Name="btn_save" Content="save" HorizontalAlignment="Center" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="780" FontWeight="Bold" FontSize="50" Click="btn_save_Click" FontFamily="Comic Sans MS"/>
     </Grid>
 </Window>
