@@ -23,6 +23,7 @@ namespace chara_crt
     public partial class MainWindow : Window
     {
         public bool _dark_mode = false;
+        public bool _light_mode = true;
 
         public MainWindow()
         {
@@ -53,24 +54,12 @@ namespace chara_crt
             uwu.Foreground = Brushes.Black;
             uwu.Background = Brushes.White;
 
-            _dark_mode = false;
+            _ = false;
         }
         private void btn_load_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.DefaultExt = ".xml";
-            dialog.Filter = "XML documents (.xml)|*.xml";
-
-            Nullable<bool> result = dialog.ShowDialog();
-
-            if (result == true)
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(data_to_save));
-                using (TextReader reader = new StreamReader(dialog.FileName))
-                {
-                    data_to_save data = (data_to_save)serializer.Deserialize(reader);                    
-                }
-            }
+            Window2 window2 = new Window2(_dark_mode);
+            window2.Show();
         }
     }
 }
