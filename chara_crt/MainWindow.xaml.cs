@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace chara_crt
 {
@@ -55,7 +57,20 @@ namespace chara_crt
         }
         private void btn_load_Click(object sender, RoutedEventArgs e)
         {
+            var dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.DefaultExt = ".xml";
+            dialog.Filter = "XML documents (.xml)|*.xml";
 
+            Nullable<bool> result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(data_to_save));
+                using (TextReader reader = new StreamReader(dialog.FileName))
+                {
+                    data_to_save data = (data_to_save)serializer.Deserialize(reader);                    
+                }
+            }
         }
     }
 }
