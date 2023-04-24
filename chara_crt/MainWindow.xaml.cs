@@ -14,20 +14,58 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
 using System.IO;
+using System.Windows.Automation.Provider;
 
 namespace chara_crt
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
-    {
+    {        
         public bool _dark_mode = false;
-        public bool _light_mode = true;
+
+        public static string _uwu = "0";
+
+        static string cesta_souboru = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        static string cesta_ = cesta_souboru + "\\chara_crt";
 
         public MainWindow()
         {
             InitializeComponent();
+
+            if(Directory.Exists(cesta_))
+            {
+                if (File.Exists(cesta_ + "\\settings.txt"))
+                {
+                    string obsah_souboru = File.ReadAllText(cesta_ + "\\settings.txt");
+                    if (obsah_souboru.Contains("0"))
+                    {                        
+                        _dark_mode= false;
+                        this.Background = Brushes.White;
+                        uwu.Foreground = Brushes.Black;
+                        uwu.Background = Brushes.White;
+                    }
+                    else
+                    {
+                        _dark_mode = true;
+                        this.Background = Brushes.Black;
+                        uwu.Foreground = Brushes.White;
+                        uwu.Background = Brushes.Black;
+                    }
+                }
+                else
+                {
+                    using (StreamWriter writer = new StreamWriter(cesta_ + "\\settings.txt"))
+                    {
+                        writer.WriteLine(_uwu);
+                    }
+                }
+            }
+            else
+            {               
+                Directory.CreateDirectory(cesta_);
+                File.Create("\\settings.txt");                
+                File.WriteAllText(cesta_ + "\\settings.txt", _uwu);
+            }
         }
         private void btn_tma_Click(object sender, RoutedEventArgs e)
         {
@@ -39,6 +77,11 @@ namespace chara_crt
             uwu.Background = Brushes.Black;
 
             _dark_mode = true;
+            _uwu = "1";
+            using (StreamWriter writer = new StreamWriter(cesta_ + "\\settings.txt"))
+            {
+                writer.WriteLine(_uwu);
+            }
         }
         private void btn_crt_Click(object sender, RoutedEventArgs e)
         {
@@ -54,7 +97,12 @@ namespace chara_crt
             uwu.Foreground = Brushes.Black;
             uwu.Background = Brushes.White;
 
-            _ = false;
+            _dark_mode = false;
+            _uwu = "0";
+            using (StreamWriter writer = new StreamWriter(cesta_ + "\\settings.txt"))
+            {
+                writer.WriteLine(_uwu);
+            }
         }
         private void btn_load_Click(object sender, RoutedEventArgs e)
         {
